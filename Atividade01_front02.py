@@ -1,15 +1,24 @@
-# --- Variáveis para os resultados ---
+''' FOI UTIULIZADA A GEMINI!!
+ PARA CORRECAO!!
+ E COMENTARIOS DO CODIGO !
+
+-Filipe Barbosa
+
+'''
+
+
+
+#CONTADORES E VARIAVEIS
 maior_altura = 0.0
 menor_altura = float('inf')  # Uso de infinito para garantir que a primeira altura seja a menor
 soma_altura_feminino = 0.0
 cont_f = 0
 cont_m = 0
 
-# --- Loop para coletar dados de 15 pessoas ---
-for i in range(3):
+#LOOP : EM RANGE VOCE DEFINE A QUANTIDADE QUE QUER QUE ELE RODE O CODIGO
+for i in range(5):
     nome = input(f"Pessoa {i + 1} - Digite seu nome: ")
 
-    # Validação simples para garantir que a altura seja um número
     while True:
             altura = float(input(f"Oi, {nome}! Digite sua altura (em metros): "))
             if altura > 0:
@@ -17,7 +26,6 @@ for i in range(3):
             else:
                 print("Altura inválida. Digite um valor maior que zero.")
 
-    # Validação para o gênero
     while True:
         genero = input(f"Oi, {nome}! Informe seu gênero (M/F): ").upper()
         if genero in ['M', 'F']:
@@ -25,21 +33,21 @@ for i in range(3):
         else:
             print("Gênero inválido. Digite 'M' ou 'F'.")
 
-    # Atualiza a maior e menor altura
+    #CONTAGEM DA ALTURA
     if altura > maior_altura:
         maior_altura = altura
     if altura < menor_altura:
         menor_altura = altura
 
-    # Contagem e soma por gênero
+    # CONTAGEM DO GENERO
     if genero == 'F':
         soma_altura_feminino += altura
         cont_f += 1
     elif genero == 'M':
         cont_m += 1
 
-# --- Apresentação dos resultados ---
-print("=== RESULTADOS! ===")
+#RESULTADOS
+print("===------RESULTADOS!------===")
 print(f"A maior altura é: {maior_altura:.2f} m")
 print(f"A menor altura é: {menor_altura:.2f} m")
 
